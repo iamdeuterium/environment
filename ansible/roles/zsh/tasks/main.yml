@@ -1,0 +1,19 @@
+- name: Install zsh
+  sudo: true
+  apt: name=zsh state=present
+
+- name: Set zsh as default shell
+  sudo: true
+  user: name={{ user }} shell=/usr/bin/zsh
+
+- name: Clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/{{ user }}/.oh-my-zsh update=no
+
+- name: Copy .zsh_profile to home dir
+  copy: src=zshrc dest=/home/{{ user }}/.zsh_profile
+
+- name: Copy .zshrc to home dir
+  copy: src=zshrc dest=/home/{{ user }}/.zshrc
+
+- name: Create .zshrc.d directory
+  file: path=/home/{{ user }}/.zshrc.d state=directory

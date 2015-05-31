@@ -1,0 +1,10 @@
+- name: Add Sublime Text repository
+  sudo: true
+  apt_repository: repo='ppa:webupd8team/sublime-text-3' state=present
+
+- name: Install Sublime Text
+  sudo: true
+  apt: name=sublime-text-installer state=present
+
+- name: Install Sublime Package Control
+  get_url: url="https://packagecontrol.io/Package%20Control.sublime-package" dest="/home/{{ user }}/.config/sublime-text-3/Installed Packages/Package Control.sublime-package"

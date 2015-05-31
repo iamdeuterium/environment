@@ -1,0 +1,14 @@
+- name: Install desktop soft
+  apt: name={{ item }} state=installed
+  sudo: true
+  with_items:
+    - synaptic
+    - htop
+    - terminator
+    - filezilla
+    - skype
+    - vlc
+    - virtualbox
+    - chromium-browser
+    - openssh-server
+    - ubuntu-restricted-extras

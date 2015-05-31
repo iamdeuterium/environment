@@ -1,0 +1,6 @@
+- name: Install golang
+  sudo: true
+  apt: name=golang state=present
+
+- name: Copy go config
+  copy: src=golang.zsh dest=/home/{{ user }}/.zshrc.d/golang.zsh

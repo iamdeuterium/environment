@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    user: "{{ ansible_user_id }}"
+  roles:
+    - system
+    - desktop
+    - zsh
+    - sublimetext
+    - dev_common
+    - dev_ruby
+    - dev_golang
