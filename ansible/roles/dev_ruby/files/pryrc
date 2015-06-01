@@ -1,0 +1,19 @@
+Pry.config.theme        = 'solarized'
+Pry.config.editor       = 'vim'
+Pry.config.prompt_name  = "ruby #{RUBY_VERSION}"
+
+Pry.commands.alias_command 'vim', 'edit'
+Pry.commands.alias_command 'ss', 'show-source'
+
+begin
+  require 'awesome_print'
+
+  AwesomePrint.pry!
+  AwesomePrint.defaults = {
+    indent: 2,
+    sort_keys: true
+  }
+
+rescue LoadError => err
+  puts "PRY: no awesome_print :("
+end
