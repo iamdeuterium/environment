@@ -2,13 +2,14 @@
   apt: name={{ item }} state=installed
   sudo: true
   with_items:
-    - synaptic
-    - htop
-    - terminator
-    - filezilla
-    - skype
-    - vlc
-    - virtualbox
     - chromium-browser
+    - filezilla
+    - htop
+    - keepass2
     - openssh-server
+    - skype
+    - synaptic
+    - terminator
     - ubuntu-restricted-extras
+    - virtualbox
+    - vlc
