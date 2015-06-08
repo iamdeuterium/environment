@@ -16,3 +16,12 @@
 
 - name: Copy .gitconfig
   copy: src=gitconfig dest=/home/{{ user }}/.gitconfig
+
+- name: Copy .vimrc
+  copy: src=vimrc dest=/home/{{ user }}/.vimrc
+
+- name: Vundle check directory
+  file: path=/home/{{ user }}/.vim/bundle state=directory mode=0755
+
+- name: Install Vundle
+  git: repo=https://github.com/gmarik/Vundle.vim.git dest=/home/{{ user }}/.vim/bundle/Vundle.vim update=no
