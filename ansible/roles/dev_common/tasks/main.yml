@@ -25,3 +25,7 @@
 
 - name: Install Vundle
   git: repo=https://github.com/gmarik/Vundle.vim.git dest=/home/{{ user }}/.vim/bundle/Vundle.vim update=no
+  register: vundle
+
+- name: Install Vundle plugins
+  shell: "echo -ne '\n' | vim +PluginInstall +qall"
