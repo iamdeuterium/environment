@@ -30,3 +30,9 @@
 
 - name: Install Vundle plugins
   shell: "echo -ne '\n' | vim +PluginInstall +qall"
+
+- name: Install linuxbrew
+  git: repo=https://github.com/Homebrew/linuxbrew.git dest=/home/{{ user }}/.linuxbrew update=no
+
+- name: Copy linuxbrew zsh config
+  copy: src=linuxbrew.zsh dest=/home/{{ user }}/.zshrc.d/linuxbrew.zsh
