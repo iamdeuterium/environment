@@ -14,6 +14,8 @@
     - openjdk-8-jdk
     - nodejs
     - npm
+    - python-setuptools
+    - sshfs
 
 - name: Copy .gitconfig
   copy: src=gitconfig dest=/home/{{ user }}/.gitconfig
