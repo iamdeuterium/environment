@@ -5,6 +5,7 @@
     - chromium-browser
     - filezilla
     - htop
+    - iotop
     - keepass2
     - openssh-server
     - skype
