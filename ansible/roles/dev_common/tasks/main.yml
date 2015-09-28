@@ -9,6 +9,7 @@
     - ack-grep
     - git
     - git-flow
+    - meld
     - vagrant
     - sphinxsearch
     - openjdk-8-jdk
