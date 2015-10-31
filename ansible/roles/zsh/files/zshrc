@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git rails ruby bundler debian sudo vagrant)
+plugins=(git git-flow screen web-search rails ruby bundler debian sudo vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
