@@ -1,11 +1,11 @@
 - name: Sudoers | update sudoers file and validate
   lineinfile: "dest=/etc/sudoers state=present regexp='^{{ user }}' line='{{ user }} ALL=(ALL) NOPASSWD: ALL'"
-  sudo: true
+  become: true
 
 - name: Set swappiness to 10
-  sudo: true
+  become: true
   sysctl: name=vm.swappiness value=10 state=present
 
 - name: Up inotify watches limit
-  sudo: true
+  become: true
   sysctl: name=fs.inotify.max_user_watches value=524288 state=present

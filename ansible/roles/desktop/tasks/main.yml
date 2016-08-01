@@ -1,6 +1,6 @@
 - name: Install desktop soft
   apt: name={{ item }} state=installed
-  sudo: true
+  become: true
   with_items:
     - chromium-browser
     - filezilla
@@ -11,7 +11,13 @@
     - skype
     - synaptic
     - terminator
+    - guake
     - ubuntu-restricted-extras
     - virtualbox
     - vlc
     - gimp
+    - scrot
+    - xclip
+
+- name: Copy screenshare to home
+  copy: src=screenshare dest=/home/{{ user }}/screenshare mode=0744

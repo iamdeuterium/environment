@@ -33,13 +33,13 @@
 
 - name: Install packages required for compilation of some stdlib modules
   apt: name={{ item }} state=present
-  sudo: true
+  become: true
   with_items:
     - tklib
 
 - name: Install packages required for RubyGems and Rails
   apt: name={{ item }} state=present
-  sudo: true
+  become: true
   with_items:
     - zlib1g-dev
     - libssl-dev
@@ -49,7 +49,7 @@
 
 - name: Install packages required for nokogiri
   apt: name={{ item }} state=present
-  sudo: true
+  become: true
   with_items:
     - libxml2
     - libxml2-dev
@@ -57,13 +57,13 @@
 
 - name: Install packages required for imagemagic
   apt: name={{ item }} state=present
-  sudo: true
+  become: true
   with_items:
     - imagemagick
     - libmagickwand-dev
 
-- name: Check ruby 2.2.2 installed for system
-  shell: zsh -lc 'rbenv versions | grep 2.2.2'
+- name: Check ruby 2.3.1 installed for system
+  shell: zsh -lc 'rbenv versions | grep 2.3.1'
   register: ruby_installed
   changed_when: false
   ignore_errors: yes
@@ -71,13 +71,13 @@
   environment:
     HOME: /home/tz
 
-- name: Install ruby 2.2.2
-  shell: zsh -lc 'rbenv install 2.2.2'
-  when: ruby_installed.rc != 0 
+- name: Install ruby 2.3.1
+  shell: zsh -lc 'rbenv install 2.3.1'
+  when: ruby_installed.rc != 0
 
-- name: Set global ruby 2.2.2
-  shell: zsh -lc 'rbenv global 2.2.2'
-  when: ruby_installed.rc != 0   
+- name: Set global ruby 2.3.1
+  shell: zsh -lc 'rbenv global 2.3.1'
+  when: ruby_installed.rc != 0
 
 - name: Rbenv rehash
   shell: zsh -lc 'rbenv rehash'

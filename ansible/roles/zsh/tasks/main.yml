@@ -1,9 +1,9 @@
 - name: Install zsh
-  sudo: true
+  become: true
   apt: name=zsh state=present
 
 - name: Set zsh as default shell
-  sudo: true
+  become: true
   user: name={{ user }} shell=/usr/bin/zsh
 
 - name: Clone oh-my-zsh repo

@@ -1,9 +1,9 @@
 - name: Add Sublime Text repository
-  sudo: true
+  become: true
   apt_repository: repo='ppa:webupd8team/sublime-text-3' state=present
 
 - name: Install Sublime Text
-  sudo: true
+  become: true
   apt: name=sublime-text-installer state=present
 
 - name: Install Sublime Package Control

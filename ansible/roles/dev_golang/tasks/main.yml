@@ -1,5 +1,5 @@
 - name: Install golang
-  sudo: true
+  become: true
   apt: name=golang state=present
 
 - name: Copy go config
