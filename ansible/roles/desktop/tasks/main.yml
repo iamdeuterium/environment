@@ -20,4 +20,4 @@
     - xclip
 
 - name: Copy screenshare to home
-  copy: src=screenshare dest=/home/{{ user }}/screenshare mode=0744
+  get_url: url=https://gist.githubusercontent.com/iamdeuterium/3366d6005acd489fc49b7f83beda725e/raw/52ea4829fa0cc9dbf1f1f79cab385fa8e94e0492/screenshare dest=/home/{{ user }}/screenshare mode=0744 force=yes
