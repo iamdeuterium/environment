@@ -20,6 +20,9 @@
 - name: Copy .gitconfig
   copy: src=gitconfig dest=/home/{{ user }}/.gitconfig
 
+- name: Copy .gitignore
+  copy: src=gitignore dest=/home/{{ user }}/.gitignore
+
 - name: Copy .vimrc
   copy: src=vimrc dest=/home/{{ user }}/.vimrc
 
